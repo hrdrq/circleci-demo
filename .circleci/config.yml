@@ -1,11 +1,15 @@
 version: 2.1
+commands:
+  my-command:
+    steps:
+      - run: echo "hello job"
+      - run: python --version
 jobs:
     my-job:
         docker:
             - image: circleci/python:3.9
         steps:
-            - run: echo "hello job"
-            - run: python --version
+            - my-command
 workflows:
     my-job-workflow:
         jobs:
