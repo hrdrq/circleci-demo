@@ -1,8 +1,10 @@
 version: 2.1
+hoge:
+    foo: &image_name circleci/python:3.9
 jobs:
     my-job:
         docker:
-            - image: circleci/python:3.9
+            - image: *image_name
         steps:
             - run: echo "hello job"
             - run: python --version
