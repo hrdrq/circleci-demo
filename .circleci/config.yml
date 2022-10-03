@@ -1,0 +1,7 @@
+version: 2.1
+orbs:
+    my-orb: circleci/hello-build@0.0.5
+workflows:
+    my-workflow":
+        jobs:
+          - my-orb/hello-build
